@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sumProcessor" class="Stepanov.homework.SumProcessor"/>
+    <bean id="subtractProcessor" class="Stepanov.homework.SubtractProcessor"/>
+    <bean id="divideProcessor" class="Stepanov.homework.DivideProcessor"/>
+    <bean id="multiplyProcessor" class="Stepanov.homework.MultiplyProcessor"/>
+
+    <bean id="calculator" class="Stepanov.homework.Calculator">
+        <constructor-arg ref="sumProcessor"/>
+        <constructor-arg ref="subtractProcessor"/>
+        <constructor-arg ref="divideProcessor"/>
+        <constructor-arg ref="multiplyProcessor"/>
+    </bean>
+
+</beans>
